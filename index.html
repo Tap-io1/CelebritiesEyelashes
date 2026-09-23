@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Celebrities Eyelashes | Περιστέρι</title>
+
+<style>
+
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #CCCCC3;
+
+    color: #B08D57;
+
+    display: flex;
+    justify-content: center;
+
+    padding: 28px 18px 35px;
+
+    position: relative;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   SUBTLE BACKGROUND
+========================= */
+
+body::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(176,141,87,0.12) 0px,
+            rgba(176,141,87,0.12) 2px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(176,141,87,0.08) 0px,
+            rgba(176,141,87,0.08) 1px,
+            transparent 2px
+        );
+
+    background-size:
+        300px 300px,
+        380px 380px;
+
+    z-index: 0;
+}
+
+
+/* =========================
+   SOFT GOLD GLOW
+========================= */
+
+body::after {
+    content: "";
+
+    position: fixed;
+
+    width: 380px;
+    height: 380px;
+
+    top: -190px;
+    right: -170px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(176,141,87,0.12),
+            transparent 70%
+        );
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    width: 100%;
+    max-width: 480px;
+
+    margin: 0 auto;
+
+    text-align: center;
+
+    position: relative;
+    z-index: 1;
+}
+
+
+/* =========================
+   LOGO AREA
+========================= */
+
+.logo-wrapper {
+    width: 100%;
+    height: 320px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 8px;
+}
+
+.logo {
+    width: 100%;
+    max-width: 400px;
+
+    max-height: 310px;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/* =========================
+   ADDRESS
+========================= */
+
+.address {
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color: #B08D57;
+
+    margin-top: 5px;
+    margin-bottom: 18px;
+
+    letter-spacing: 0.3px;
+}
+
+
+/* =========================
+   DIVIDER
+========================= */
+
+.divider {
+    width: 60px;
+    height: 2px;
+
+    margin: 0 auto 27px;
+
+    background: #B08D57;
+
+    border-radius: 20px;
+
+    opacity: 0.9;
+}
+
+
+/* =========================
+   BUTTON CONTAINER
+========================= */
+
+.buttons {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 13px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn {
+    width: 100%;
+
+    min-height: 64px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-start;
+
+    padding: 15px 20px;
+
+    color: #B08D57;
+
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    letter-spacing: 0.2px;
+
+    background: rgba(255,255,255,0.08);
+
+    border: 2px solid #B08D57;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 6px 16px rgba(0,0,0,0.08);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   BUTTON HOVER
+========================= */
+
+.btn:hover {
+    background: rgba(176,141,87,0.10);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 9px 20px rgba(0,0,0,0.10);
+}
+
+
+/* =========================
+   BUTTON ACTIVE
+========================= */
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================
+   ICON
+========================= */
+
+.icon {
+    width: 42px;
+    min-width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-right: 15px;
+
+    color: #B08D57;
+}
+
+.icon svg {
+    width: 28px;
+    height: 28px;
+
+    stroke: currentColor;
+
+    fill: none;
+
+    stroke-width: 1.9;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* =========================
+   BUTTON TEXT
+========================= */
+
+.btn-text {
+    flex: 1;
+
+    text-align: left;
+
+    color: #B08D57;
+}
+
+
+/* =========================
+   PHONE MODAL
+========================= */
+
+.phone-modal {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,0.55);
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 1000;
+}
+
+.phone-modal.active {
+    display: flex;
+}
+
+.phone-box {
+    width: 100%;
+    max-width: 380px;
+
+    background: #CCCCC3;
+
+    border: 2px solid #B08D57;
+
+    border-radius: 18px;
+
+    padding: 25px 20px;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.25);
+
+    text-align: center;
+}
+
+.phone-title {
+    color: #B08D57;
+
+    font-size: 19px;
+
+    font-weight: 800;
+
+    margin-bottom: 20px;
+}
+
+.phone-option {
+    width: 100%;
+
+    min-height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 12px;
+
+    color: #B08D57;
+
+    text-decoration: none;
+
+    font-size: 17px;
+    font-weight: 800;
+
+    border: 2px solid #B08D57;
+
+    border-radius: 12px;
+
+    background: transparent;
+}
+
+.phone-option:hover {
+    background: rgba(176,141,87,0.10);
+}
+
+.close-phone {
+    margin-top: 7px;
+
+    background: none;
+
+    border: none;
+
+    color: #7b6b53;
+
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer-line {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 33px;
+}
+
+.footer-line::before,
+.footer-line::after {
+    content: "";
+
+    width: 55px;
+    height: 1px;
+
+    background: #B08D57;
+
+    opacity: 0.65;
+}
+
+.footer-symbol {
+    margin: 0 12px;
+
+    color: #B08D57;
+
+    font-size: 13px;
+}
+
+.footer {
+    margin-top: 14px;
+
+    font-size: 11px;
+
+    color: #B08D57;
+
+    letter-spacing: 1.3px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding:
+            20px
+            16px
+            30px;
+    }
+
+    .logo-wrapper {
+        height: 290px;
+    }
+
+    .logo {
+        max-width: 370px;
+        max-height: 280px;
+    }
+
+    .address {
+        font-size: 13px;
+    }
+
+    .btn {
+        min-height: 62px;
+
+        padding:
+            14px
+            17px;
+
+        font-size: 14px;
+    }
+
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 380px) {
+
+    .logo-wrapper {
+        height: 255px;
+    }
+
+    .logo {
+        max-width: 330px;
+        max-height: 245px;
+    }
+
+    .btn {
+        min-height: 58px;
+
+        padding:
+            13px
+            14px;
+
+        font-size: 13.5px;
+    }
+
+    .icon {
+        width: 36px;
+        min-width: 36px;
+
+        height: 36px;
+
+        margin-right: 11px;
+    }
+
+    .icon svg {
+        width: 25px;
+        height: 25px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+    <!-- =========================
+         LOGO
+
+         Filename:
+         celebrities-logo.png
+    ========================= -->
+
+    <div class="logo-wrapper">
+
+        <img
+            src="celebrities-logo.png.PNG"
+            alt="Celebrities Eyelashes"
+            class="logo"
+        >
+
+    </div>
+
+
+    <!-- =========================
+         ADDRESS
+    ========================= -->
+
+    <div class="address">
+        Αριστοτέλους 4, Περιστέρι
+    </div>
+
+
+    <div class="divider"></div>
+
+
+    <!-- =========================
+         BUTTONS
+    ========================= -->
+
+    <div class="buttons">
+
+
+        <!-- GOOGLE REVIEW -->
+
+        <a
+            class="btn"
+            href="https://search.google.com/local/writereview?placeid=ChIJ8Ve2cT-joRQRWvbGG10mPz4"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <span class="icon">
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 3.5 L14.6 8.8 L20.5 9.6 L16.2 13.8 L17.2 19.7 L12 16.9 L6.8 19.7 L7.8 13.8 L3.5 9.6 L9.4 8.8 Z"/>
+                </svg>
+
+            </span>
+
+            <span class="btn-text">
+                Αξιολογήστε μας στο Google
+            </span>
+
+        </a>
+
+
+        <!-- INSTAGRAM -->
+
+        <a
+            class="btn"
+            href="https://www.instagram.com/celebrities.eyelashes?stkn=cW5pdWl4dW5jZDJu"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <span class="icon">
+
+                <svg viewBox="0 0 24 24">
+
+                    <rect
+                        x="3"
+                        y="3"
+                        width="18"
+                        height="18"
+                        rx="5"
+                    />
+
+                    <circle
+                        cx="12"
+                        cy="12"
+                        r="4"
+                    />
+
+                    <circle
+                        cx="17.5"
+                        cy="6.5"
+                        r="1"
+                        fill="currentColor"
+                        stroke="none"
+                    />
+
+                </svg>
+
+            </span>
+
+            <span class="btn-text">
+                Βρείτε μας στο Instagram
+            </span>
+
+        </a>
+
+
+        <!-- TREATWELL -->
+
+        <a
+            class="btn"
+            href="https://www.treatwell.gr/katasthma/celebrities-eyelashes/?campaign_id=shared_link&campaign_platform=ios&partner_id=544700&campaign_medium=Pasteboard&fbclid=PAVERFWAUg0zRwZG9mAmZkaWQWUO8YFJrlNUKg0uA7kpw9wOGgWOJhVGV4dG4DYWVtAjEwAHNydGMGYXBwX2lkDzEyNDAyNDU3NDI4NzQxNAABp62EvQAqQyJrBui3lRbgmteGniXzkoMQK7WxG04onIzDdXTLzZ_-ZxObjNZJ_aem_Que_hImRZDR10PzIMrFWeA"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <span class="icon">
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M5 7h14"/>
+                    <path d="M7 4v6"/>
+                    <path d="M17 4v6"/>
+                    <rect x="4" y="6" width="16" height="14" rx="2"/>
+                    <path d="M8 14l2.5 2.5L16 11"/>
+                </svg>
+
+            </span>
+
+            <span class="btn-text">
+                Κλείστε το επόμενο σας ραντεβού
+            </span>
+
+        </a>
+
+
+        <!-- WEBSITE -->
+
+        <a
+            class="btn"
+            href="https://www.beautyeshop.gr/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <span class="icon">
+
+                <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="9"/>
+                    <path d="M3 12h18"/>
+                    <path d="M12 3c3 3 3 15 0 18"/>
+                    <path d="M12 3c-3 3-3 15 0 18"/>
+                </svg>
+
+            </span>
+
+            <span class="btn-text">
+                Επισκεφθείτε την ιστοσελίδα μας
+            </span>
+
+        </a>
+
+
+        <!-- TIKTOK -->
+
+        <a
+            class="btn"
+            href="https://www.tiktok.com/@celebrities.eyelashes?_r=1&_t=ZN-99yTZrBcAic"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <span class="icon">
+
+                <svg viewBox="0 0 24 24">
+
+                    <path
+                        d="M14 4
+                           V15.2
+                           C14 18
+                           12.1 20
+                           9.5 20
+                           C7 20
+                           5 18.2
+                           5 15.8
+                           C5 13.3
+                           7 11.5
+                           9.5 11.5"
+                    />
+
+                    <path
+                        d="M14 4
+                           C15 6.8
+                           17 8.3
+                           20 8.5"
+                    />
+
+                </svg>
+
+            </span>
+
+            <span class="btn-text">
+                Βρείτε μας στο TikTok
+            </span>
+
+        </a>
+
+
+        <!-- CALL US -->
+
+        <button
+            class="btn"
+            type="button"
+            onclick="openPhones()"
+        >
+
+            <span class="icon">
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M6.5 3.5l3 3-2 2c1.2 2.5 3.5 4.8 6 6l2-2 3 3c.7.7.7 1.8 0 2.5l-1.2 1.2c-.6.6-1.5.8-2.3.5C8.8 17.7 6.3 15.2 3.3 9c-.4-.8-.2-1.7.5-2.3L5 5.5"/>
+                </svg>
+
+            </span>
+
+            <span class="btn-text">
+                Καλέστε μας
+            </span>
+
+        </button>
+
+
+    </div>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <div class="footer-line">
+
+        <span class="footer-symbol">
+            ✦
+        </span>
+
+    </div>
+
+
+    <div class="footer">
+        © CELEBRITIES EYELASHES
+    </div>
+
+
+</div>
+
+
+<!-- =========================
+     PHONE SELECTION
+========================= -->
+
+<div
+    class="phone-modal"
+    id="phoneModal"
+    onclick="closeOutside(event)"
+>
+
+    <div class="phone-box">
+
+        <div class="phone-title">
+            Επιλέξτε τηλέφωνο
+        </div>
+
+
+        <a
+            class="phone-option"
+            href="tel:+302105780777"
+        >
+            210 578 0777
+        </a>
+
+
+        <a
+            class="phone-option"
+            href="tel:+306970401000"
+        >
+            697 040 1000
+        </a>
+
+
+        <button
+            class="close-phone"
+            type="button"
+            onclick="closePhones()"
+        >
+            Κλείσιμο
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function openPhones() {
+
+    document
+        .getElementById("phoneModal")
+        .classList
+        .add("active");
+
+}
+
+
+function closePhones() {
+
+    document
+        .getElementById("phoneModal")
+        .classList
+        .remove("active");
+
+}
+
+
+function closeOutside(event) {
+
+    if (event.target.id === "phoneModal") {
+
+        closePhones();
+
+    }
+
+}
+
+</script>
+
+
+</body>
+</html>
